@@ -41,3 +41,11 @@ sections="FUTURE,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
 
 [tool.pylint.'MESSAGES CONTROL']
 extension-pkg-whitelist = "pydantic"
+disable = [ # https://docs.pylint.org/en/v2.11.1/technical_reference/features.html
+    "format", # handled by black
+    "miscellaneous", # accept TODO
+    "empty-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "missing-module-docstring",
+]
