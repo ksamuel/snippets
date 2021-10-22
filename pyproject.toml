@@ -1,0 +1,43 @@
+[tool.poetry]
+name = ""
+version = "0.0.1"
+description = ""
+authors = [""]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+environs = "^9.3.3"
+ 
+[tool.poetry.dev-dependencies]
+doit = "^0.33.1"
+faker = "^8.8.0"
+mypy = "^0.910"
+pylint = "^2.10.2"
+black = "^21.8b0"
+pytest = "^6.2.5" 
+pytest-pythonpath = "^0.7.3"
+shiv = "^0.5.2"
+ipdb = "^0.13.9"
+rich = "^10.9.0"
+types-all = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "-s"
+python_paths = "."
+testpaths = [
+    "tests",
+]
+ 
+[tool.isort]
+profile = "black"
+atomic = true
+float_to_top = true
+multi_line_output = 3
+sections="FUTURE,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+
+[tool.pylint.'MESSAGES CONTROL']
+extension-pkg-whitelist = "pydantic"
