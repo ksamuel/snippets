@@ -1,6 +1,27 @@
 import builtins
-
+from collections import *
 from prettyprint import pprint as pretty_print
+
+STDLIB_COLLECTIONS = (
+    str,
+    bytes,
+    int,
+    float,
+    complex,
+    memoryview,
+    dict,
+    tuple,
+    set,
+    bool,
+    bytearray,
+    frozenset,
+    slice,
+    deque,
+    defaultdict,
+    OrderedDict,
+    Counter,
+)
+
 
 try:
     
