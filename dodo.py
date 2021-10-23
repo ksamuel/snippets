@@ -38,13 +38,9 @@ def task_name():
 
 
  
- 
-
- 
-
- 
-
-        "params": [{"name": "db", "default": "bittree", "long": "db"}],
-        "getargs": {
-            "password": ("generate_password", "password"),
-        },
+def task_install_deps():
+    return {
+        "actions": ["poetry lock", "poetry install --no-root"], 
+        "verbosity": 2,
+    }
+       
