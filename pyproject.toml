@@ -19,6 +19,7 @@ pytest-pythonpath = "*"
 shiv = "*"
 ipdb = "*"
 rich = "*"
+chime = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
