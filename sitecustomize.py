@@ -76,3 +76,10 @@ def inspect(obj):
             print("   ", name, "=", val)
  
 builtins.inspect = inspect
+
+try:
+    import chime
+    chime.theme('material')
+    chime.notify_exceptions()
+except ImportError:
+    pass
