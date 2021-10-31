@@ -1,8 +1,18 @@
 import builtins
+import asyncio
+import sys
 from functools import partial
 from collections import *
 from pprint import pprint as pretty_print
 from inspect import getmembers, ismethod, stack
+
+import logging
+
+
+import __main__ 
+if  not hasattr(__main__, '__file__'):
+    logging.getLogger('asyncio').setLevel('ERROR')
+
 
 STDLIB_COLLECTIONS = (
     str,
@@ -23,6 +33,8 @@ STDLIB_COLLECTIONS = (
     OrderedDict,
     Counter,
 )
+
+
 
 def is_public_attribute(obj, name, methods=()):
     return not name.startswith("_") and name not in methods and hasattr(obj, name)
