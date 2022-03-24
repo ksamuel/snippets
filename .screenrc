@@ -1,0 +1,2 @@
+# Allow scrolling in screen sessions
+termcapinfo xterm* ti@:te@
