@@ -1,49 +1,29 @@
-[tool.poetry]
-name = ""
-version = "0.0.1"
+[project]
+name = "kresus"
+version = "0.1.0"
 description = ""
-authors = [""]
+dependencies = ["environs", "pydantic"]
 
-[tool.poetry.dependencies]
-python = "^3.7"
+[project.optional-dependencies]
+dev = ["mypy", "pylint", "black", "pip-tools", "doit"]
 
-
-[tool.poetry.dev-dependencies]
-doit = "*"
-faker = "*"
-mypy = "*"
-pylint = "*"
-black = "*"
-pytest = "*"
-pytest-pythonpath = "*"
-shiv = "*"
-ipdb = "*"
-rich = "*"
-chime = "*"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.pytest.ini_options]
-addopts = "-s"
-python_paths = "."
-testpaths = [
-    "tests",
-]
 
 [tool.isort]
 profile = "black"
 atomic = true
 float_to_top = true
 multi_line_output = 3
-sections="FUTURE,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+sections = "FUTURE,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
 
 [tool.pylint.'MESSAGES CONTROL']
-extension-pkg-whitelist = "pydantic"
-disable = [ # https://docs.pylint.org/en/v2.11.1/technical_reference/features.html
-    "format", # handled by black
-    "miscellaneous", # accept TODO
+disable = [
+    "format",
+    "miscellaneous",
     "empty-docstring",
     "missing-class-docstring",
     "missing-function-docstring",
