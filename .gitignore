@@ -135,3 +135,6 @@ dmypy.json
 
 # doit
 .doit.db
+
+# editors
+.vscode
