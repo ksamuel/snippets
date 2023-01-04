@@ -11,7 +11,9 @@ DOIT_CONFIG = {
     "default_tasks": [""],
     "backend": "sqlite3",
     "action_string_formatting": "new",
+    "verbosity": 2,
 }
+
 
 def action(param_name, postitional_argument_list):
   pass
@@ -37,10 +39,13 @@ def task_name():
     }
 
 
- 
-def task_install_deps():
+def task_lock_deps():
     return {
-        "actions": ["poetry lock", "poetry install --no-root"], 
-        "verbosity": 2,
+        "actions": [
+            "pip-compile -o requirements.txt pyproject.toml",
+            "pip-compile --extra dev -o dev-requirements.txt pyproject.toml",
+        ],
     }
-       
+
+
+      
